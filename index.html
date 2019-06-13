@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<title>Global Turismo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.myLink {display: none}
+</style>
+<body class="w3-light-grey">
+
+<!-- MENU NAVEGACAO -->
+  
+    <a href="index.html"><img id="logo" src="w3images/unnamed.jpg" width="150" style="margin-right: 800px"></img></a>
+  <button class="w3-button w3-dark-grey" onclick="Cadastre()">Cadastre-se</button>
+  <button class="w3-button w3-dark-grey" onclick="MinhaConta()">Minha Conta</button>
+  
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  <img class="w3-image" src="w3images/es.jpg" alt="ES" width="500" height="800">
+  <div class="w3-display-middle" style="width:65%">
+    <div class="w3-bar w3-black">
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Flight');"><i class="fa fa-plane w3-margin-right"></i>Voos</button>
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Hotel');"><i class="fa fa-bed w3-margin-right"></i>Hotel</button>
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Pacotes');"><i class="fa fa-dropbox w3-margin-right"></i>Pacotes</button>
+
+    </div>
+
+    <!-- Tabs -->
+    <div id="Flight" class="w3-container w3-white w3-padding-16 myLink">
+      <h3>Passagens aéreas</h3>
+      <div class="w3-row-padding" style="margin:0 -16px;">
+        <div class="w3-half">
+          <label>Origem</label>
+          <input class="w3-input w3-border" type="text" placeholder="Saindo de">
+        </div>
+        <div class="w3-half">
+          <label>Destino</label>
+          <input class="w3-input w3-border" type="text" placeholder="Indo para">
+        </div>
+      </div>
+      <p><button class="w3-button w3-dark-grey" onclick="Erro()">Pesquisar</button></p>
+    </div>
+
+    <div id="Hotel" class="w3-container w3-white w3-padding-16 myLink">
+      <h3>Melhores Hotéis</h3>
+      <div class="w3-row-padding" style="margin:0 -16px;">
+        <div class="w3-half">
+          <label>Check-in</label>
+          <input class="w3-input w3-border" type="date">
+        </div>
+        <div class="w3-half">
+          <label>Check-out</label>
+          <input class="w3-input w3-border" type="date">
+        </div>
+      </div>
+      <p><button class="w3-button w3-dark-grey" onclick="Hoteis()">Procurar Hotéis</button></p>
+    </div>
+        <div id="Pacotes" class="w3-container w3-white w3-padding-16 myLink">
+      <h3>Confira os pacotes disponíveis!</h3>
+      <div class="w3-row-padding" style="margin:0 -16px;">
+        <div class="w3-half">
+          <label>Origem</label>
+          <input class="w3-input w3-border" type="text" placeholder="Saindo de" required="required">
+        </div>
+        <div class="w3-half">
+          <label>Destino</label>
+          <input class="w3-input w3-border" type="text" placeholder="Indo para">
+        </div>
+      </div>
+
+      <p><button class="w3-button w3-dark-grey" onclick="Pesquisa()">Pesquisar</button></p>
+    </div>
+
+    
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px;">
+
+  <!-- Good offers -->
+  <div class="w3-container w3-margin-top" style="color:black;">
+    <h3>Melhores promoções</h3>
+    <h6>Até <strong>50%</strong> de desconto!</h6>
+  </div>
+  <div class="w3-row-padding w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="w3images/matilde.jpg" alt="Cachoeiro de Matilde" style="width:100%">
+        <span class="w3-display-bottomleft w3-padding">Cachoeiro de Matilde</span>
+      </div>
+    </div>
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="w3images/rio.jpg" alt="Rio de Janeiro" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Rio de Janeiro</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="w3images/brasilia.jpg" alt="Brasilia" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Brasilia</span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="w3images/pelourinho.jpg" alt="Pelourinho" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Pelourinho</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="w3images/ouropreto.jpg" alt="Ouro Preto" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Ouro Preto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <img src="w3images/salvador.jpg" alt="Salvador" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Salvador</h3>
+        <p class="w3-opacity">Ida e Volta por $79</p>
+        <button class="w3-button w3-margin-bottom" style="background-color: #7399d6">Comprar</button>
+      </div>
+    </div>
+    <div class="w3-half w3-margin-bottom">
+      <img src="w3images/curitiba.jpg" alt="Curitiba" style="width:100%";>
+      <div class="w3-container w3-white">
+        <h3>Curitiba</h3>
+        <p class="w3-opacity">Passagem só ida por R$99</p>
+        <button class="w3-button w3-margin-bottom" style="background-color: #7399d6">Comprar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="w3-container">
+    <form action="/action_page.php" target="_blank">
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card w3-hover-opacity-off">
+      <h2>Receba nossas ofertas. Cadastre-se!</h2>
+      <label>E-mail</label>
+      <input class="w3-input w3-border" type="text" placeholder="Digite seu melhor Email" required>
+      <button type="submit" class="w3-button w3-red w3-margin-top">Cadastre-se</button>
+    </div>
+    </form>
+  </div>
+  
+  <!-- Contact -->
+  <div class="w3-container">
+    <h2 style="color: black">Contato</h2>
+    <p style="color: black">Conte-nos como foi sua experiência conosco!</p>
+    <p style="color: black"> Vila Velha, ES</p>
+    <p style="color: black"> Phone: +00 123456789</p>
+    <p style="color: black"> Email: global@turismo.com</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nome" required name="Nome"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensagem" required name="Menssagem"></p>
+      <p><button class="w3-button w3-black w3-padding-large" type="submit">Enviar</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <h5 style="color: black">Fale Conosco</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official" style="color: black"></i>
+    <i class="fa fa-instagram" style="color: black"></i>
+    <i class="fa fa-snapchat" style="color: black"></i>
+    <i class="fa fa-pinterest-p" style="color: black"></i>
+    <i class="fa fa-twitter" style="color: black"></i>
+    <i class="fa fa-linkedins" style="color: black"></i>
+  </div>
+</footer>
+<script>
+
+function pop_up() {
+
+jan=open("pagina.htm","dd","width=500,height=400");
+
+}
+
+</script>
+
+<a href="pop_up()">clique aqui para abrir a pop_up</a>
+<script>
+// Tabs
+function openLink(evt, linkName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("myLink");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(linkName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+
+// Click on the first tablink on load
+document.getElementsByClassName("tablink")[0].click();
+
+function MinhaConta(){
+	location.href="login.html"
+}
+function Cadastre(){
+	location.href="cadastro.html"
+}
+function Pesquisa(){
+	location.href="passagens.html"
+}
+function Hoteis(){
+	location.href="hoteis.html"
+}
+function Erro(){
+	location.href="erro.html"
+}
+
+</script>
+
+</body>
+</html>

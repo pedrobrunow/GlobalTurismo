@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<title>Global Turismo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.myLink {display: none}
+</style>
+<body class="w3-light-grey">
+
+<!-- MENU NAVEGACAO -->
+  <div id="usuarioLogado"></div>
+  <a href="index.html"><img id="logo" src="w3images/unnamed.jpg" width="150" style="margin-right: 800px"></img></a>
+  <button class="w3-button w3-dark-grey">Cadastre-se</button>
+  <button class="w3-button w3-dark-grey">Minha Conta</button>
+  
+
+
+  <!-- Newsletter -->
+  <div class="w3-container">
+    <!--<form action="/action_page.php" target="_blank"> -->
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card w3-hover-opacity-off">
+      
+      <label>Login</label>
+      <input id="Login" class="w3-input w3-border" type="text" placeholder="Digite seu login ou Email" required>
+	  <label>Senha</label>
+      <input id="Senha" class="w3-input w3-border" type="password" placeholder="**********" required>
+      <button type="submit" class="w3-button w3-red w3-margin-top" onclick="Acessar()">Acessar</button>
+	 
+    </div>
+    <!--</form>-->
+  </div>
+  
+  <!-- Contact -->
+  <div class="w3-container">
+    <h2 style="color: black">Contato</h2>
+    <p style="color: black">Conte-nos como foi sua experiência conosco!</p>
+    <p style="color: black"> Vila Velha, ES</p>
+    <p style="color: black"> Phone: +00 123456789</p>
+    <p style="color: black"> Email: global@turismo.com</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nome" required name="Nome"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensagem" required name="Menssagem"></p>
+      <p><button class="w3-button w3-black w3-padding-large" type="submit">Enviar</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <h5 style="color: black">Fale Conosco</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official" style="color: black"></i>
+    <i class="fa fa-instagram" style="color: black"></i>
+    <i class="fa fa-snapchat" style="color: black"></i>
+    <i class="fa fa-pinterest-p" style="color: black"></i>
+    <i class="fa fa-twitter" style="color: black"></i>
+    <i class="fa fa-linkedins" style="color: black"></i>
+  </div>
+</footer>
+
+<script>
+// Tabs
+function openLink(evt, linkName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("myLink");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(linkName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+
+// Click on the first tablink on load
+//document.getElementsByClassName("tablink")[0].click();
+
+function Acessar(){
+
+var login = document.getElementById("Login").value;
+var senha = document.getElementById("Senha").value;
+
+	if(login == "admin@uvv.br" && senha == "123456789"){			
+		alert("Acesso validado, você será redirecionado para a página principal");
+		location.href="index.html"		
+	} else {
+		alert("Usuário ou Senha Inválido");
+	}
+}
+
+</script>
+
+</body>
+</html>
